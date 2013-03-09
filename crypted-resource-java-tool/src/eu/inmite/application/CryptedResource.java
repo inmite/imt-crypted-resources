@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.SecureRandom;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 /**
  *
@@ -27,7 +25,7 @@ public class CryptedResource {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        
+
         if (args.length == 0) {
             CryptedResource.printHelp();
         }
@@ -42,7 +40,7 @@ public class CryptedResource {
 
             byte[] bufferOrig = new byte[1 * 1024 * 1024]; //1MB
             byte[] bufferEncr = new byte[1 * 1024 * 1024]; //1MB
-            byte[] symKey = new BASE64Decoder().decodeBuffer(args[3].replaceAll("\n", "")); // see how long the key is
+            byte[] symKey = unescapeString(args[3]); // see how long the key is
 
             int readBytes = 0;
 
@@ -67,10 +65,37 @@ public class CryptedResource {
         } else if ("gen".equals(args[0].toLowerCase())) {
             byte[] buffer = new byte[Integer.valueOf(args[1])];
             new SecureRandom().nextBytes(buffer);
-            System.out.println(new BASE64Encoder().encode(buffer).replaceAll("\n", ""));
+            System.out.println(escapedString(buffer));
         } else {
             CryptedResource.printHelp();
         }
+    }
+    
+   
+    private static String escapedString(byte[] inBytes) {
+        if (inBytes.length % 2 != 0) return null;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < inBytes.length ; i++) {
+            String hex1 = Integer.toHexString(inBytes[i] & 0xFF);
+            if (hex1.length() == 1) {
+                hex1 = "0" + hex1;
+            }
+            builder.append(hex1);
+        }
+        return builder.toString();
+    }
+
+    private static byte[] unescapeString(String inString) {
+        return hexStringToByteArray(inString);
+    }
+
+    private static byte[] hexStringToByteArray(String s) {
+        int len = s.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4) + Character.digit(s.charAt(i + 1), 16));
+        }
+        return data;
     }
 
     private static void printHelp() throws IOException {

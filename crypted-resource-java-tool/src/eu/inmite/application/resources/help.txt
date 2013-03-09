@@ -11,17 +11,17 @@ The allowed commands are:
 
         Example:
           java -jar crypted-resource-java-tool.jar gen 256
-          # command generates 256 bytes = 2048 bits in base64 encoding
+          # command generates 256 bytes = 2048 bits in hex string encoding
 
-- xor - Outputs XOR of an input file and a key (base64) into the output file.
+- xor - Outputs XOR of an input file and a key (hex string) into the output file.
         Since XOR is a symmetric operation, this command is used for both
         encryption end decryption. Command has 3 parameters: input file, output
-        file and key in base64 encoding.
+        file and key in hex string encoding.
 
         Example:
           java -jar crypted-resource-java-tool.jar in.bin out.bin p15xmz9k1MdqhlFgN1y95Q==
           # command takes bytes of in.bin, xors them (cyclically) with bits of
-          # the key (decoded from base64) and outputs the bytes in out.bin
+          # the key (decoded from hex string) and outputs the bytes in out.bin
 
 - help - Prints this help.
 
