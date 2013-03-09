@@ -1,0 +1,27 @@
+
+This is a utility for a simple XOR file encryption. The utility is written in
+Java and can be launched as such:
+
+java -jar CryptedResource.jar [command] [params ...]
+
+The allowed commands are:
+
+- gen - Generate a new key for image encryption in base64 encoding. This command
+        has only one parameter - the length of key in bytes.
+
+        Example:
+          java -jar CryptedResource.jar gen 256
+          # command generates 256 bytes = 2048 bits in base64 encoding
+
+- xor - Outputs XOR of an input file and a key (base64) into the output file.
+        Since XOR is a symmetric operation, this command is used for both
+        encryption end decryption. Command has 3 parameters: input file, output
+        file and key in base64 encoding.
+
+        Example:
+          java -jar CryptedResource.jar in.bin out.bin p15xmz9k1MdqhlFgN1y95Q==
+          # command takes bytes of in.bin, xors them (cyclically) with bits of
+          # the key (decoded from base64) and outputs the bytes in out.bin
+
+- help - Prints this help.
+
