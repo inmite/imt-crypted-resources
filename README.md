@@ -9,9 +9,9 @@ The project contains a simple tool written in Java that can be used to encrypt o
 files, as such:
 
     $ java -jar crypted-resource-java-tool.jar gen 16
-    2PoH6pYMeTeVGo7K0KLBEQ==
+    ffa17e84f481201844724a4e1c1b981e
     
-    $ java -jar input.png output.cri 2PoH6pYMeTeVGo7K0KLBEQ==
+    $ java -jar input.png output.cri ffa17e84f481201844724a4e1c1b981e
 
 Also, there is a sample iOS project that demonstrates the use of the client side library.
 
