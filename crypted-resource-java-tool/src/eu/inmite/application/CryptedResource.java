@@ -67,7 +67,7 @@ public class CryptedResource {
         } else if ("gen".equals(args[0].toLowerCase())) {
             byte[] buffer = new byte[Integer.valueOf(args[1])];
             new SecureRandom().nextBytes(buffer);
-            System.out.println(new BASE64Encoder().encode(buffer));
+            System.out.println(new BASE64Encoder().encode(buffer).replaceAll("\n", ""));
         } else {
             CryptedResource.printHelp();
         }
