@@ -16,3 +16,26 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+# NetBeans specific #
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Mac Specific #
+.DS_Store
+
+# Class Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/nbproject/private/
+/crypted-resource-java/nbproject/private/
+/crypted-resource-java-tool/nbproject/private/
