@@ -2,7 +2,7 @@ Mobile library and tool for encrypted resources
 ===============================================
 
 This is a project for utility library and tools for resource encryption on iOS. It
-basically encrypts resources using a XOR function with a key provided in the binary,
+basically obfuscates resources using a XOR function with a key provided in the binary,
 drawing resources unreadable for a regular users or modarate attackers.
 
 How to use 
