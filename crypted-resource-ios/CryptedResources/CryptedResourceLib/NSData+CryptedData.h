@@ -14,6 +14,9 @@
 
 @interface NSData (CryptedData)
 
++ (NSData*) cryptedDataWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
++ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
+
 + (NSData*) cryptedDataWithData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
 + (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
 

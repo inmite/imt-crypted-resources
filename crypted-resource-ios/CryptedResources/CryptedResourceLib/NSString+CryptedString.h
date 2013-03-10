@@ -14,6 +14,9 @@
 
 @interface NSString (CryptedString)
 
++ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
++ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
+
 + (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
 + (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
 

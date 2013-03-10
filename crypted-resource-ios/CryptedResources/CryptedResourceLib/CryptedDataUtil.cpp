@@ -16,7 +16,7 @@
 
 #define hex(c) ((c >= '0' && c <= '9')?c - '0':((c >= 'a' && c <= 'f')?10 + c - 'a':((c >= 'A' && c <= 'F')?10 + c - 'A':-1)))
 
-char *hex2bytes(char *hex, size_t len) {
+char *CryptedDataUtil::hex2bytes(char *hex, size_t len) {
     if (len % 2 != 0) {
         return NULL;
     }
@@ -31,13 +31,10 @@ char *hex2bytes(char *hex, size_t len) {
 
 char* CryptedDataUtil::dataFromCryptedData(char* encryptedData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength) {
     char *originalBytes = (char*) malloc(dataLength * sizeof(char));
-    char *binarySymKey = hex2bytes(symKey, symKeyLength);
-    
+
     for (size_t i = 0; i < dataLength; i++) {
-        originalBytes[i] = encryptedData[i] ^ binarySymKey[i % (symKeyLength / 2)];
+        originalBytes[i] = encryptedData[i] ^ symKey[i % symKeyLength];
     }
-    
-    free(binarySymKey);
     
     // return the length of the resulting data
     *outputLength = dataLength;
@@ -47,13 +44,10 @@ char* CryptedDataUtil::dataFromCryptedData(char* encryptedData, size_t dataLengt
 
 char* CryptedDataUtil::cryptedDataFromData(char* originalData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength) {
     char *originalBytes = (char*) malloc(dataLength * sizeof(char));
-    char *binarySymKey = hex2bytes(symKey, symKeyLength);
     
     for (size_t i = 0; i < dataLength; i++) {
-        originalBytes[i] = originalData[i] ^ binarySymKey[i % (symKeyLength / 2)];
+        originalBytes[i] = originalData[i] ^ symKey[i % symKeyLength];
     }
-    
-    free(binarySymKey);
     
     // return the length of the resulting data
     *outputLength = dataLength;

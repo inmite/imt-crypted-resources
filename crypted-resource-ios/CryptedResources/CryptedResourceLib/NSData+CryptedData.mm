@@ -17,6 +17,36 @@
 @implementation NSData (CryptedData)
 
 /**
+ * Returns data obtained after decrypting crypted data using the client provided raw key.
+ * @param encryptedData A chunk of crypted data to be decrypted.
+ * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
+ * does not have to be valid when using the incorrect key.
+ */
++ (NSData*) cryptedDataWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey {
+    size_t size;
+    char *originalBytes = CryptedDataUtil::dataFromCryptedData((char*)[encryptedData bytes], [encryptedData length], (char*)[rawKey bytes], [rawKey length], &size);
+    return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Returns data obtained after decrypting crypted data stored in a specified file using
+ * the client provided raw key.
+ * @param fullPath A full path to the binary file with the crypted data.
+ * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
+ * does not have to be valid when using the incorrect key.
+ */
++ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey {
+    size_t size;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+        return nil;
+    }
+    char *originalBytes = CryptedDataUtil::dataFromCryptedFile([fullPath UTF8String], (char*)[rawKey bytes], [rawKey length], &size);
+    return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
+}
+
+/**
  * Returns data obtained after decrypting crypted data using the client provided key.
  * @param encryptedData A chunk of crypted data to be decrypted.
  * @param hexKey A key used to decrypt the crypted data, hexadecimal string.
@@ -25,7 +55,8 @@
  */
 + (NSData*) cryptedDataWithData:(NSData*)encryptedData hexKey:(NSString*)hexKey {
     size_t size;
-    char *originalBytes = CryptedDataUtil::dataFromCryptedData((char*)[encryptedData bytes], [encryptedData length], (char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length], &size);
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *originalBytes = CryptedDataUtil::dataFromCryptedData((char*)[encryptedData bytes], [encryptedData length], (char*)rawKey, [hexKey length] / 2, &size);
     return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
 }
 
@@ -42,7 +73,8 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
         return nil;
     }
-    char *originalBytes = CryptedDataUtil::dataFromCryptedFile([fullPath UTF8String], (char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length], &size);
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *originalBytes = CryptedDataUtil::dataFromCryptedFile([fullPath UTF8String], (char*)rawKey, [hexKey length] / 2, &size);
     return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
 }
 

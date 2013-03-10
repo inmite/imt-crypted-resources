@@ -19,6 +19,7 @@ using namespace std;
 
 class CryptedDataUtil {
 public:
+    static char* hex2bytes(char *hex, size_t len);
     static char* dataFromCryptedData(char* encryptedData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength);
     static char* cryptedDataFromData(char* originalData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength);
     static char* dataFromCryptedFile(const char* fileName, char *symKey, size_t symKeyLength, size_t * outputLength);
