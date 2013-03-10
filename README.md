@@ -78,4 +78,5 @@ the cryptography happens on the device, hacker will winn, in the end. Unless you
 the key in some smarter manner on the device (or even on the server), of course.
 
 The mechanism in it's basic form will prevent someone who is able to Jailbreak the device
-and use tools such as iExplorer to steal or modify your resources.
+and use tools such as iExplorer to steal or modify your resources. And it can buy you some
+time...
