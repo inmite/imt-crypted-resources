@@ -45,7 +45,7 @@ From this moment on, you are able to call the specific methods on <code>UIImage<
 Alternatively, you can provide an individual key (in hexadecimal string format) for each
 of the resources, for example as such:
 
-    self.data  = [NSData cryptedDataWithData:originalData symKey:@"1234567890abcdef"];
+    self.data  = [NSData cryptedDataWithData:originalData hexKey:@"1234567890abcdef"];
 
 See the header files for more detailed information on what methods are available.
 
