@@ -15,6 +15,25 @@ files, as such:
 
 Also, there is a sample iOS project that demonstrates the use of the client side library.
 
+Basically, you need to visit <code>CryptedConstants.h</code> file and put the generated
+key there:
+
+    #define DEFAULT_KEY @"ffa17e84f481201844724a4e1c1b981e"
+
+From this moment, you are able to call the specific methods on <code>UIImage</code>,
+<code>NSString</code> and <code>NSData</code>, for example:
+
+    #import "CryptedResources.h"
+    
+    // ...
+    
+    self.image = [UIImage cryptedImageNamed:@"output.cri"];
+    self.text  = [NSString cryptedStringWithContentsOfFile:@"crypted_text.crs"
+                                                 encoding:NSUTF8StringEncoding];
+    self.data  = [NSData cryptedDataWithData:originalData];
+
+See the header files for more detailed information on what methods are available.
+
 F.A.Q
 -----
 

@@ -63,7 +63,8 @@ public class CryptedResource {
             fis.close();
             bis.close();
         } else if ("gen".equals(args[0].toLowerCase())) {
-            byte[] buffer = new byte[Integer.valueOf(args[1])];
+            int size = Integer.valueOf(args[1]);
+            byte[] buffer = new byte[size];
             new SecureRandom().nextBytes(buffer);
             System.out.println(escapedString(buffer));
         } else {
