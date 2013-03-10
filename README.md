@@ -14,7 +14,7 @@ files, as such:
     $ java -jar crypted-resource-java-tool.jar gen 16
     ffa17e84f481201844724a4e1c1b981e
     
-    $ java -jar input.png output.cri ffa17e84f481201844724a4e1c1b981e
+    $ java -jar crypted-resource-java-tool.jar xor input.png output.cri ffa17e84f481201844724a4e1c1b981e
 
 The command above stores the crypted version of <code>input.png</code> to the file
 <code>output.cri</code>, using <code>ffa17e84f481201844724a4e1c1b981e</code> as the key
