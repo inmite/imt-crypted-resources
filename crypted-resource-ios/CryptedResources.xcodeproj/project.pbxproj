@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B30990016EB7603004BC14D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3098FF16EB7602004BC14D /* UIKit.framework */; };
+		1B30990216EB7603004BC14D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B30990116EB7603004BC14D /* Foundation.framework */; };
+		1B30990416EB7603004BC14D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B30990316EB7603004BC14D /* CoreGraphics.framework */; };
+		1B30990A16EB7603004BC14D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B30990816EB7603004BC14D /* InfoPlist.strings */; };
+		1B30990C16EB7603004BC14D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B30990B16EB7603004BC14D /* main.m */; };
+		1B30991016EB7603004BC14D /* IMTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B30990F16EB7603004BC14D /* IMTAppDelegate.m */; };
+		1B30991216EB7603004BC14D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B30991116EB7603004BC14D /* Default.png */; };
+		1B30991416EB7603004BC14D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B30991316EB7603004BC14D /* Default@2x.png */; };
+		1B30991616EB7603004BC14D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B30991516EB7603004BC14D /* Default-568h@2x.png */; };
+		1B30991916EB7603004BC14D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B30991716EB7603004BC14D /* MainStoryboard.storyboard */; };
+		1B30991C16EB7603004BC14D /* IMTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B30991B16EB7603004BC14D /* IMTViewController.m */; };
+		1B30993D16EB7652004BC14D /* CryptedDataUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B30993B16EB7652004BC14D /* CryptedDataUtil.cpp */; };
+		1B30994016EB7DF7004BC14D /* UIImage+CryptedImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B30993F16EB7DF7004BC14D /* UIImage+CryptedImage.mm */; };
+		1BDE0DAC16EBE189006B5960 /* NSString+CryptedString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE0DAB16EBE189006B5960 /* NSString+CryptedString.mm */; };
+		1BDE0DB416EBE7D8006B5960 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DB216EBE7D8006B5960 /* Icon.png */; };
+		1BDE0DB516EBE7D8006B5960 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DB316EBE7D8006B5960 /* Icon@2x.png */; };
+		1BDE0DBC16EBFD1B006B5960 /* inmite.cri in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DBB16EBFD1B006B5960 /* inmite.cri */; };
+		1BDE0DBF16EC0163006B5960 /* NSData+CryptedData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE0DBE16EC0162006B5960 /* NSData+CryptedData.mm */; };
+		1BDE0DC316EC07B2006B5960 /* text.crs in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DC216EC07B2006B5960 /* text.crs */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B3098FC16EB7602004BC14D /* CryptedResources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptedResources.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B3098FF16EB7602004BC14D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B30990116EB7603004BC14D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B30990316EB7603004BC14D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B30990716EB7603004BC14D /* CryptedResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CryptedResources-Info.plist"; sourceTree = "<group>"; };
+		1B30990916EB7603004BC14D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B30990B16EB7603004BC14D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B30990D16EB7603004BC14D /* CryptedResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CryptedResources-Prefix.pch"; sourceTree = "<group>"; };
+		1B30990E16EB7603004BC14D /* IMTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMTAppDelegate.h; sourceTree = "<group>"; };
+		1B30990F16EB7603004BC14D /* IMTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMTAppDelegate.m; sourceTree = "<group>"; };
+		1B30991116EB7603004BC14D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		1B30991316EB7603004BC14D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		1B30991516EB7603004BC14D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		1B30991816EB7603004BC14D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1B30991A16EB7603004BC14D /* IMTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMTViewController.h; sourceTree = "<group>"; };
+		1B30991B16EB7603004BC14D /* IMTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMTViewController.m; sourceTree = "<group>"; };
+		1B30992316EB7603004BC14D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1B30993B16EB7652004BC14D /* CryptedDataUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CryptedDataUtil.cpp; sourceTree = "<group>"; };
+		1B30993C16EB7652004BC14D /* CryptedDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptedDataUtil.h; sourceTree = "<group>"; };
+		1B30993E16EB7DF7004BC14D /* UIImage+CryptedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CryptedImage.h"; sourceTree = "<group>"; };
+		1B30993F16EB7DF7004BC14D /* UIImage+CryptedImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+CryptedImage.mm"; sourceTree = "<group>"; };
+		1BDE0DAA16EBE189006B5960 /* NSString+CryptedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CryptedString.h"; sourceTree = "<group>"; };
+		1BDE0DAB16EBE189006B5960 /* NSString+CryptedString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+CryptedString.mm"; sourceTree = "<group>"; };
+		1BDE0DAD16EBE1C6006B5960 /* CryptedResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptedResources.h; sourceTree = "<group>"; };
+		1BDE0DAE16EBE2BB006B5960 /* CryptedConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptedConstants.h; sourceTree = "<group>"; };
+		1BDE0DB216EBE7D8006B5960 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		1BDE0DB316EBE7D8006B5960 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		1BDE0DBB16EBFD1B006B5960 /* inmite.cri */ = {isa = PBXFileReference; lastKnownFileType = file; name = inmite.cri; path = Resources/inmite.cri; sourceTree = "<group>"; };
+		1BDE0DBD16EC0162006B5960 /* NSData+CryptedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CryptedData.h"; sourceTree = "<group>"; };
+		1BDE0DBE16EC0162006B5960 /* NSData+CryptedData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+CryptedData.mm"; sourceTree = "<group>"; };
+		1BDE0DC216EC07B2006B5960 /* text.crs */ = {isa = PBXFileReference; lastKnownFileType = file; name = text.crs; path = Resources/text.crs; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B3098F916EB7602004BC14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B30990016EB7603004BC14D /* UIKit.framework in Frameworks */,
+				1B30990216EB7603004BC14D /* Foundation.framework in Frameworks */,
+				1B30990416EB7603004BC14D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B3098F316EB7602004BC14D = {
+			isa = PBXGroup;
+			children = (
+				1B30990516EB7603004BC14D /* CryptedResources */,
+				1B3098FE16EB7602004BC14D /* Frameworks */,
+				1B3098FD16EB7602004BC14D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B3098FD16EB7602004BC14D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B3098FC16EB7602004BC14D /* CryptedResources.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B3098FE16EB7602004BC14D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B3098FF16EB7602004BC14D /* UIKit.framework */,
+				1B30990116EB7603004BC14D /* Foundation.framework */,
+				1B30990316EB7603004BC14D /* CoreGraphics.framework */,
+				1B30992316EB7603004BC14D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B30990516EB7603004BC14D /* CryptedResources */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE0DB016EBE50D006B5960 /* Controller */,
+				1BDE0DAF16EBE4F8006B5960 /* Resources */,
+				1B30993A16EB7635004BC14D /* Lib */,
+				1B30990616EB7603004BC14D /* Supporting Files */,
+				1B30990E16EB7603004BC14D /* IMTAppDelegate.h */,
+				1B30990F16EB7603004BC14D /* IMTAppDelegate.m */,
+				1B30991716EB7603004BC14D /* MainStoryboard.storyboard */,
+			);
+			path = CryptedResources;
+			sourceTree = "<group>";
+		};
+		1B30990616EB7603004BC14D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B30990716EB7603004BC14D /* CryptedResources-Info.plist */,
+				1B30990816EB7603004BC14D /* InfoPlist.strings */,
+				1B30990B16EB7603004BC14D /* main.m */,
+				1B30990D16EB7603004BC14D /* CryptedResources-Prefix.pch */,
+				1B30991116EB7603004BC14D /* Default.png */,
+				1B30991316EB7603004BC14D /* Default@2x.png */,
+				1B30991516EB7603004BC14D /* Default-568h@2x.png */,
+				1BDE0DB216EBE7D8006B5960 /* Icon.png */,
+				1BDE0DB316EBE7D8006B5960 /* Icon@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B30993A16EB7635004BC14D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE0DB916EBE89A006B5960 /* CryptedResources */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		1BDE0DAF16EBE4F8006B5960 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE0DC216EC07B2006B5960 /* text.crs */,
+				1BDE0DBB16EBFD1B006B5960 /* inmite.cri */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1BDE0DB016EBE50D006B5960 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B30991A16EB7603004BC14D /* IMTViewController.h */,
+				1B30991B16EB7603004BC14D /* IMTViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1BDE0DB916EBE89A006B5960 /* CryptedResources */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE0DAD16EBE1C6006B5960 /* CryptedResources.h */,
+				1BDE0DAE16EBE2BB006B5960 /* CryptedConstants.h */,
+				1B30993C16EB7652004BC14D /* CryptedDataUtil.h */,
+				1B30993B16EB7652004BC14D /* CryptedDataUtil.cpp */,
+				1B30993E16EB7DF7004BC14D /* UIImage+CryptedImage.h */,
+				1B30993F16EB7DF7004BC14D /* UIImage+CryptedImage.mm */,
+				1BDE0DAA16EBE189006B5960 /* NSString+CryptedString.h */,
+				1BDE0DAB16EBE189006B5960 /* NSString+CryptedString.mm */,
+				1BDE0DBD16EC0162006B5960 /* NSData+CryptedData.h */,
+				1BDE0DBE16EC0162006B5960 /* NSData+CryptedData.mm */,
+			);
+			name = CryptedResources;
+			path = CryptedResourceLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B3098FB16EB7602004BC14D /* CryptedResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B30993416EB7603004BC14D /* Build configuration list for PBXNativeTarget "CryptedResources" */;
+			buildPhases = (
+				1B3098F816EB7602004BC14D /* Sources */,
+				1B3098F916EB7602004BC14D /* Frameworks */,
+				1B3098FA16EB7602004BC14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptedResources;
+			productName = CryptedResources;
+			productReference = 1B3098FC16EB7602004BC14D /* CryptedResources.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B3098F416EB7602004BC14D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IMT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Inmite s.r.o";
+			};
+			buildConfigurationList = 1B3098F716EB7602004BC14D /* Build configuration list for PBXProject "CryptedResources" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B3098F316EB7602004BC14D;
+			productRefGroup = 1B3098FD16EB7602004BC14D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B3098FB16EB7602004BC14D /* CryptedResources */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B3098FA16EB7602004BC14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B30990A16EB7603004BC14D /* InfoPlist.strings in Resources */,
+				1B30991216EB7603004BC14D /* Default.png in Resources */,
+				1B30991416EB7603004BC14D /* Default@2x.png in Resources */,
+				1B30991616EB7603004BC14D /* Default-568h@2x.png in Resources */,
+				1B30991916EB7603004BC14D /* MainStoryboard.storyboard in Resources */,
+				1BDE0DB416EBE7D8006B5960 /* Icon.png in Resources */,
+				1BDE0DB516EBE7D8006B5960 /* Icon@2x.png in Resources */,
+				1BDE0DBC16EBFD1B006B5960 /* inmite.cri in Resources */,
+				1BDE0DC316EC07B2006B5960 /* text.crs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B3098F816EB7602004BC14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B30990C16EB7603004BC14D /* main.m in Sources */,
+				1B30991016EB7603004BC14D /* IMTAppDelegate.m in Sources */,
+				1B30991C16EB7603004BC14D /* IMTViewController.m in Sources */,
+				1B30993D16EB7652004BC14D /* CryptedDataUtil.cpp in Sources */,
+				1B30994016EB7DF7004BC14D /* UIImage+CryptedImage.mm in Sources */,
+				1BDE0DAC16EBE189006B5960 /* NSString+CryptedString.mm in Sources */,
+				1BDE0DBF16EC0163006B5960 /* NSData+CryptedData.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B30990816EB7603004BC14D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B30990916EB7603004BC14D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B30991716EB7603004BC14D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B30991816EB7603004BC14D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B30993216EB7603004BC14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B30993316EB7603004BC14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B30993516EB7603004BC14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CryptedResources/CryptedResources-Prefix.pch";
+				INFOPLIST_FILE = "CryptedResources/CryptedResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = CryptedResources;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B30993616EB7603004BC14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CryptedResources/CryptedResources-Prefix.pch";
+				INFOPLIST_FILE = "CryptedResources/CryptedResources-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = CryptedResources;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B3098F716EB7602004BC14D /* Build configuration list for PBXProject "CryptedResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B30993216EB7603004BC14D /* Debug */,
+				1B30993316EB7603004BC14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B30993416EB7603004BC14D /* Build configuration list for PBXNativeTarget "CryptedResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B30993516EB7603004BC14D /* Debug */,
+				1B30993616EB7603004BC14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B3098F416EB7602004BC14D /* Project object */;
+}

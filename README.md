@@ -13,7 +13,14 @@ files, as such:
     
     $ java -jar input.png output.cri ffa17e84f481201844724a4e1c1b981e
 
+The command above stores the crypted version of <code>input.png</code> to the file
+<code>output.cri</code>, using <code>ffa17e84f481201844724a4e1c1b981e</code> as the key
+for encryption.
+
 Also, there is a sample iOS project that demonstrates the use of the client side library.
+All library files are under <code>Lib/CryptedResources</code> groupd in the project. To
+use the library, just drag and drop the <code>Lib/CryptedResources</code> group to your
+project.
 
 Basically, you need to visit <code>CryptedConstants.h</code> file and put the generated
 key there:
@@ -29,7 +36,7 @@ From this moment, you are able to call the specific methods on <code>UIImage</co
     
     self.image = [UIImage cryptedImageNamed:@"output.cri"];
     self.text  = [NSString cryptedStringWithContentsOfFile:@"crypted_text.crs"
-                                                 encoding:NSUTF8StringEncoding];
+                                                  encoding:NSUTF8StringEncoding];
     self.data  = [NSData cryptedDataWithData:originalData];
 
 See the header files for more detailed information on what methods are available.
