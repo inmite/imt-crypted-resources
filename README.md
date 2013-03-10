@@ -38,6 +38,11 @@ From this moment, you are able to call the specific methods on <code>UIImage</co
     self.text  = [NSString cryptedStringWithContentsOfFile:@"crypted_text.crs"
                                                   encoding:NSUTF8StringEncoding];
     self.data  = [NSData cryptedDataWithData:originalData];
+    
+Alternatively, you can provide an individual key (in hexadecimal string format) for each
+of the resources, for example as such:
+
+    self.data  = [NSData cryptedDataWithData:originalData symKey:@"1234567890abcdef"];
 
 See the header files for more detailed information on what methods are available.
 
