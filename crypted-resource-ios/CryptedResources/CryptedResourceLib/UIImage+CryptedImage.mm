@@ -20,7 +20,7 @@
  * Returns a UIImage from the crypted chunk of data. This method uses client provided raw key
  * to decrypt the data.
  * @param encryptedData A chunk of crypted data that includes a crypted image.
- * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @param rawKey A key used to decrypt the crypted data, raw bytes.
  * @return An instance of UIImage in case the data contain umage after being decrypted, null otherwise.
  */
 + (UIImage*) cryptedImageWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey {
@@ -36,7 +36,7 @@
  * Returns a UIImage from the crypted image in the application bundle. This method uses client provided raw key
  * to decrypt the data.
  * @param name A crypted image name in the bundle, including the file extension.
- * @param hexKey A key used to decrypt the crypted resource, raw bytes.
+ * @param rawKey A key used to decrypt the crypted resource, raw bytes.
  * @return An instance of UIImage in case the resource exists in the bundle and was successfully decrypted, null otherwise.
  */
 + (UIImage*) cryptedImageNamed:(NSString *)name rawKey:(NSData*)rawKey {
@@ -51,7 +51,7 @@
  * Returns a UIImage from the crypted image file specified by the full path. This method uses client provided raw key
  * to decrypt the data.
  * @param fullPath A full path to the crypted image file.
- * @param hexKey A key used to decrypt the crypted file, raw bytes.
+ * @param rawKey A key used to decrypt the crypted file, raw bytes.
  * @return An instance of UIImage in case the file exists and was successfully decrypted, null otherwise.
  */
 + (UIImage*) cryptedImageWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey {

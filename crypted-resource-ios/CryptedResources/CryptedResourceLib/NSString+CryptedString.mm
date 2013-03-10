@@ -21,7 +21,7 @@
  * This method uses client provided raw key to decrypt the data.
  * @param encryptedData A crypted data with the contents of the original string.
  * @param encoding An NSString encoding to be used when converting raw bytes to string instance.
- * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @param rawKey A key used to decrypt the crypted data, raw bytes.
  * @return An instance of NSString with decrypted data from the original bytes in NSData instance, or null
  * if the decryption was not successful.
  */
@@ -35,7 +35,7 @@
  * This method uses client provided raw key to decrypt the data.
  * @param fullPath A full path to the crypted text file with the contents of the string.
  * @param encoding An NSString encoding to be used when converting raw bytes to string instance.
- * @param hexKey A key used to decrypt the crypted file, raw bytes.
+ * @param rawKey A key used to decrypt the crypted file, raw bytes.
  * @return An instance of NSString with decrypted data from the file, or null
  * if the decryption was not successful or file does not exist.
  */

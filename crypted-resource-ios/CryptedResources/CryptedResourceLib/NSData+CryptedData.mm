@@ -19,7 +19,7 @@
 /**
  * Returns data obtained after decrypting crypted data using the client provided raw key.
  * @param encryptedData A chunk of crypted data to be decrypted.
- * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @param rawKey A key used to decrypt the crypted data, raw bytes.
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
@@ -33,7 +33,7 @@
  * Returns data obtained after decrypting crypted data stored in a specified file using
  * the client provided raw key.
  * @param fullPath A full path to the binary file with the crypted data.
- * @param hexKey A key used to decrypt the crypted data, raw bytes.
+ * @param rawKey A key used to decrypt the crypted data, raw bytes.
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
