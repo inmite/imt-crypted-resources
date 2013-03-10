@@ -26,7 +26,7 @@ public class CryptedResource {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        if (args.length == 0) {
+        if (args == null || args.length == 0) {
             CryptedResource.printHelp();
         }
 
