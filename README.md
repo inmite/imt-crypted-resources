@@ -42,10 +42,12 @@ From this moment on, you are able to call the specific methods on <code>UIImage<
                                                   encoding:NSUTF8StringEncoding];
     self.data  = [NSData cryptedDataWithData:originalData];
     
-Alternatively, you can provide an individual key (in hexadecimal string format) for each
-of the resources, for example as such:
+Alternatively, you can provide an individual key (in hexadecimal string format, or as a
+raw NSData object) for each of the resources, for example as such:
 
     self.data  = [NSData cryptedDataWithData:originalData hexKey:@"1234567890abcdef"];
+
+This may come handy in case you need to obfuscate the key itself in the binary.
 
 See the header files for more detailed information on what methods are available.
 
