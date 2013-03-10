@@ -5,6 +5,9 @@ This is a project for utility library and tools for resource encryption on iOS. 
 basically encrypts resources using a XOR function with a key provided in the binary,
 drawing resources unreadable for a regular users or modarate attackers.
 
+How to use 
+----------
+
 The project contains a simple tool written in Java that can be used to encrypt or decrypt
 files, as such:
 
@@ -45,6 +48,14 @@ of the resources, for example as such:
     self.data  = [NSData cryptedDataWithData:originalData symKey:@"1234567890abcdef"];
 
 See the header files for more detailed information on what methods are available.
+
+Licence
+-------
+
+This software is shared under the IHL ("Inmite Happiness License"), which is derived from
+[MIT license](http://en.wikipedia.org/wiki/MIT_License "MIT License at Wikipedia")
+completely, except for you have to follow [@inmite](http://twitter.com/inmite) if you are
+[happy](http://en.wikipedia.org/wiki/Happiness) using the software of matter.
 
 F.A.Q
 -----
