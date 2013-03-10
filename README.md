@@ -21,16 +21,16 @@ The command above stores the crypted version of <code>input.png</code> to the fi
 for encryption.
 
 Also, there is a sample iOS project that demonstrates the use of the client side library.
-All library files are under <code>Lib/CryptedResources</code> groupd in the project. To
+All library files are under <code>Lib/CryptedResources</code> group in the project. To
 use the library, just drag and drop the <code>Lib/CryptedResources</code> group to your
 project.
 
-Basically, you need to visit <code>CryptedConstants.h</code> file and put the generated
+Then, you need to visit <code>CryptedConstants.h</code> file and put the generated
 key there:
 
     #define DEFAULT_KEY @"ffa17e84f481201844724a4e1c1b981e"
 
-From this moment, you are able to call the specific methods on <code>UIImage</code>,
+From this moment on, you are able to call the specific methods on <code>UIImage</code>,
 <code>NSString</code> and <code>NSData</code>, for example:
 
     #import "CryptedResources.h"
