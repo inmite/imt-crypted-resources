@@ -70,3 +70,12 @@ There are also more advanced reasons for resource encryption. If you write an ap
 which uses an image wizard as an introduction, replacing image might instruct a user to
 perform an incorrect task (such as call a malicious number). These types of attacks play
 role in application with high security concerns, such as mobile banking or insurance apps.
+
+**Is this really secure? Is there no way attacker steals the data?**
+
+Well first, security is a subject of threads and their impacts. Basically, since all
+the cryptography happens on the device, hacker will winn, in the end. Unless you store
+the key in some smarter manner on the device (or even on the server), of course.
+
+The mechanism in it's basic form will prevent someone who is able to Jailbreak the device
+and use tools such as iExplorer to steal or modify your resources.
