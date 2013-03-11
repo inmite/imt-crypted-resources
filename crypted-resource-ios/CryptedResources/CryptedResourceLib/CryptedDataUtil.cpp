@@ -94,7 +94,7 @@ char* CryptedDataUtil::dataFromCryptedFile(const char* fileName, char *symKey, s
     
 }
 
-char* CryptedDataUtil::AES256EncryptWithKey(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
+char* CryptedDataUtil::aes256CryptedDataFromData(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
 	char keyPtr[kCCKeySizeAES256 + 1];
 	bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes
 	
@@ -121,7 +121,7 @@ char* CryptedDataUtil::AES256EncryptWithKey(char *data, size_t data_length, char
 	return NULL;
 }
 
-char *CryptedDataUtil::AES256DecryptWithKey(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
+char *CryptedDataUtil::aes256DataFromCryptedData(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
 	char keyPtr[kCCKeySizeAES256 + 1];
 	bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes (for padding)
 	
