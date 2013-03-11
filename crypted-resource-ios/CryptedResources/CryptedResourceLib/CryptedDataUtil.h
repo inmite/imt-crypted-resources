@@ -23,6 +23,9 @@ public:
     static char* dataFromCryptedData(char* encryptedData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength);
     static char* cryptedDataFromData(char* originalData, size_t dataLength, char *symKey, size_t symKeyLength, size_t * outputLength);
     static char* dataFromCryptedFile(const char* fileName, char *symKey, size_t symKeyLength, size_t * outputLength);
+    static char* aes256CryptedDataFromData(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength);
+    static char* aes256DataFromCryptedData(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength);
+    
 };
 
 #endif /* defined(__CryptedDataUtil__) */

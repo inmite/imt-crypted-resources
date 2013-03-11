@@ -13,6 +13,7 @@
 #include "CryptedDataUtil.h"
 #include <cstdio>
 #include <cstdlib>
+#include <CommonCrypto/CommonCryptor.h>
 
 #define hex(c) ((c >= '0' && c <= '9')?c - '0':((c >= 'a' && c <= 'f')?10 + c - 'a':((c >= 'A' && c <= 'F')?10 + c - 'A':-1)))
 
@@ -91,4 +92,60 @@ char* CryptedDataUtil::dataFromCryptedFile(const char* fileName, char *symKey, s
     
     return originalBytes;
     
+}
+
+char* CryptedDataUtil::AES256EncryptWithKey(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
+	char keyPtr[kCCKeySizeAES256 + 1];
+	bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes
+	
+    // copy and nullpad the key
+	for (int i = 0; i < keyLength && i < kCCKeySizeAES256+1; i++) {
+        keyPtr[i] = key[i];
+    }
+	
+	size_t bufferSize = data_length + kCCBlockSizeAES128;
+	char *buffer = (char*)malloc(bufferSize);
+	
+	*outputLength = 0;
+	CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128, kCCOptionPKCS7Padding,
+                                          keyPtr, kCCKeySizeAES256,
+                                          NULL,
+                                          data, data_length, /* input */
+                                          buffer, bufferSize, /* output */
+                                          outputLength);
+	if (cryptStatus == kCCSuccess) {
+		return buffer;
+	}
+    
+	free(buffer); //free the buffer;
+	return NULL;
+}
+
+char *CryptedDataUtil::AES256DecryptWithKey(char *data, size_t data_length, char *key, size_t keyLength, size_t *outputLength) {
+	char keyPtr[kCCKeySizeAES256 + 1];
+	bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes (for padding)
+	
+	// copy and nullpad the key
+	for (int i = 0; i < keyLength && i < kCCKeySizeAES256+1; i++) {
+        keyPtr[i] = key[i];
+    }
+	
+	size_t bufferSize = data_length + kCCBlockSizeAES128;
+	char *buffer = (char*)malloc(bufferSize);
+	
+	*outputLength = 0;
+	CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128, kCCOptionPKCS7Padding,
+                                          keyPtr, kCCKeySizeAES256,
+                                          NULL /* initialization vector (optional) */,
+                                          data, data_length, /* input */
+                                          buffer, bufferSize, /* output */
+                                          outputLength);
+	
+	if (cryptStatus == kCCSuccess) {
+		//the returned NSData takes ownership of the buffer and will free it on deallocation
+		return buffer;
+	}
+	
+	free(buffer); //free the buffer;
+	return NULL;
 }

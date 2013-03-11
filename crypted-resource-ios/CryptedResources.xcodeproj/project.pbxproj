@@ -20,6 +20,7 @@
 		1B30991C16EB7603004BC14D /* IMTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B30991B16EB7603004BC14D /* IMTViewController.m */; };
 		1B30993D16EB7652004BC14D /* CryptedDataUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B30993B16EB7652004BC14D /* CryptedDataUtil.cpp */; };
 		1B30994016EB7DF7004BC14D /* UIImage+CryptedImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B30993F16EB7DF7004BC14D /* UIImage+CryptedImage.mm */; };
+		1B42AD7416ED65D500FB1164 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B42AD7316ED65D500FB1164 /* Security.framework */; };
 		1BDE0DAC16EBE189006B5960 /* NSString+CryptedString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE0DAB16EBE189006B5960 /* NSString+CryptedString.mm */; };
 		1BDE0DB416EBE7D8006B5960 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DB216EBE7D8006B5960 /* Icon.png */; };
 		1BDE0DB516EBE7D8006B5960 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDE0DB316EBE7D8006B5960 /* Icon@2x.png */; };
@@ -50,6 +51,7 @@
 		1B30993C16EB7652004BC14D /* CryptedDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptedDataUtil.h; sourceTree = "<group>"; };
 		1B30993E16EB7DF7004BC14D /* UIImage+CryptedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CryptedImage.h"; sourceTree = "<group>"; };
 		1B30993F16EB7DF7004BC14D /* UIImage+CryptedImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+CryptedImage.mm"; sourceTree = "<group>"; };
+		1B42AD7316ED65D500FB1164 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1BDE0DAA16EBE189006B5960 /* NSString+CryptedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CryptedString.h"; sourceTree = "<group>"; };
 		1BDE0DAB16EBE189006B5960 /* NSString+CryptedString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+CryptedString.mm"; sourceTree = "<group>"; };
 		1BDE0DAD16EBE1C6006B5960 /* CryptedResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptedResources.h; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				1B30990016EB7603004BC14D /* UIKit.framework in Frameworks */,
 				1B30990216EB7603004BC14D /* Foundation.framework in Frameworks */,
 				1B30990416EB7603004BC14D /* CoreGraphics.framework in Frameworks */,
+				1B42AD7416ED65D500FB1164 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		1B3098FE16EB7602004BC14D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B42AD7316ED65D500FB1164 /* Security.framework */,
 				1B3098FF16EB7602004BC14D /* UIKit.framework */,
 				1B30990116EB7603004BC14D /* Foundation.framework */,
 				1B30990316EB7603004BC14D /* CoreGraphics.framework */,
