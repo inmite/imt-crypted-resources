@@ -59,6 +59,12 @@ This software is shared under the IHL ("Inmite Happiness License"), which is der
 completely, except for you have to follow [@inmite](http://twitter.com/inmite) if you are
 [happy](http://en.wikipedia.org/wiki/Happiness) using the software of matter.
 
+Planned features
+----------------
+
+- AES256 data encryption
+- random key obfuscation generator
+
 F.A.Q
 -----
 
