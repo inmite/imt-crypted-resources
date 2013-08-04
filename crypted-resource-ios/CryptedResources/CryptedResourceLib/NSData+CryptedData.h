@@ -15,12 +15,15 @@
 @interface NSData (CryptedData)
 
 + (NSData*) cryptedDataWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
-
 + (NSData*) cryptedDataWithData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
-
 + (NSData*) cryptedDataWithData:(NSData*)encryptedData;
+
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData;
+
++ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
++ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
 + (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath;
 
 @end

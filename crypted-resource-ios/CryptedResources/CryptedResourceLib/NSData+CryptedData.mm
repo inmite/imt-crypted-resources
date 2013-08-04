@@ -23,7 +23,7 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey {
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData rawKey:(NSData*)rawKey {
     size_t size;
     char *originalBytes = CryptedDataUtil::dataFromCryptedData((char*)[encryptedData bytes], [encryptedData length], (char*)[rawKey bytes], [rawKey length], &size);
     return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
@@ -37,7 +37,7 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey {
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath rawKey:(NSData*)rawKey {
     size_t size;
     if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
         return nil;
@@ -53,7 +53,7 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData hexKey:(NSString*)hexKey {
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData hexKey:(NSString*)hexKey {
     size_t size;
     char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
     char *originalBytes = CryptedDataUtil::dataFromCryptedData((char*)[encryptedData bytes], [encryptedData length], (char*)rawKey, [hexKey length] / 2, &size);
@@ -68,7 +68,7 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect key.
  */
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath hexKey:(NSString*)hexKey {
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath hexKey:(NSString*)hexKey {
     size_t size;
     if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
         return nil;
@@ -84,7 +84,7 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect default key.
  */
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData {
++ (NSData*) dataWithCryptedData:(NSData*)encryptedData {
     return [NSData cryptedDataWithData:encryptedData hexKey:DEFAULT_KEY];
 }
 
@@ -95,8 +95,43 @@
  * @return An instance of NSData obrained by decrypting the crypted data. The decrypted data
  * does not have to be valid when using the incorrect default key.
  */
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath {
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath {
     return [NSData cryptedDataWithContentsOfFile:fullPath hexKey:DEFAULT_KEY];
 }
+
+/**
+ * Return an encrypted data by crypting the original data with a default key.
+ * @param originalData A original data to be encrypted.
+ * @return Encrypted original data using the default key.
+ */
++ (NSData *)cryptedDataWithData:(NSData *)originalData {
+    return [NSData cryptedDataWithData:originalData hexKey:DEFAULT_KEY];
+}
+
+/**
+ * Return an encrypted data by crypting the original data with a provided hexadecimal key.
+ * @param originalData A original data to be encrypted.
+ * @param hexKey A hexadecimal string to be used as a key for encryption.
+ * @return Encrypted original data using the provided hexadecimal key.
+ */
++ (NSData *)cryptedDataWithData:(NSData *)originalData hexKey:(NSString *)hexKey {
+    size_t size;
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *cryptedBytes = CryptedDataUtil::cryptedDataFromData((char*)[originalData bytes], originalData.length, rawKey, [hexKey length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Return an encrypted data by crypting the original data with a provided raw key.
+ * @param originalData A original data to be encrypted.
+ * @param hexKey A raw data to be used as a key for encryption.
+ * @return Encrypted original data using the provided raw key.
+ */
++ (NSData *)cryptedDataWithData:(NSData *)originalData rawKey:(NSData *)rawKey {
+    size_t size;
+    char *cryptedBytes = CryptedDataUtil::cryptedDataFromData((char*)[originalData bytes], originalData.length, (char*)[rawKey bytes], rawKey.length, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
 
 @end
