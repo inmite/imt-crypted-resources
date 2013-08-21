@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     self.imageView.image = [UIImage cryptedImageNamed:@"inmite.cri"];
-    self.label.text = [NSString cryptedStringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"text" ofType:@"crs"]
+    self.label.text = [NSString stringWithContentsOfCryptedFile:[[NSBundle mainBundle] pathForResource:@"text" ofType:@"crs"]
                                                        encoding:NSUTF8StringEncoding];
 }
 
