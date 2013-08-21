@@ -14,16 +14,27 @@
 
 @interface NSData (CryptedData)
 
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
-+ (NSData*) cryptedDataWithData:(NSData*)encryptedData;
++ (NSData*) cryptedDataWithData:(NSData*)originalData rawKey:(NSData*)rawKey;
++ (NSData*) cryptedDataWithData:(NSData*)originalData hexKey:(NSString*)hexKey;
++ (NSData*) cryptedDataWithData:(NSData*)originalData;
++ (NSData*) aes256cryptedDataWithData:(NSData*)originalData rawKey:(NSData*)rawKey;
++ (NSData*) aes256cryptedDataWithData:(NSData*)originalData hexKey:(NSString*)hexKey;
++ (NSData*) aes256cryptedDataWithData:(NSData*)originalData;
 
 + (NSData*) dataWithCryptedData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
 + (NSData*) dataWithCryptedData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
 + (NSData*) dataWithCryptedData:(NSData*)encryptedData;
++ (NSData*) dataWithAes256CryptedData:(NSData*)encryptedData rawKey:(NSData*)rawKey;
++ (NSData*) dataWithAes256CryptedData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
++ (NSData*) dataWithAes256CryptedData:(NSData*)encryptedData;
 
 + (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
 + (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
 + (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath;
+
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath;
+
 
 @end

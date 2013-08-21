@@ -14,6 +14,7 @@
 #define CryptedResources_h
 
 #import "CryptedConstants.h"
+#import "NSData+CryptedData.h"
 #import "NSString+CryptedString.h"
 #import "UIImage+CryptedImage.h"
 

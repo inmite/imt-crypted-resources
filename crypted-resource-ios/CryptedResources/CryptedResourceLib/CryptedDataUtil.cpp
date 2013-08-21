@@ -149,3 +149,41 @@ char *CryptedDataUtil::aes256DataFromCryptedData(char *data, size_t data_length,
 	free(buffer); //free the buffer;
 	return NULL;
 }
+
+char* CryptedDataUtil::aes256DataFromCryptedFile(const char* fileName, char *symKey, size_t symKeyLength, size_t * outputLength) {
+    FILE* pFile;
+    long lSize;
+    char* encryptedData;
+    size_t result;
+    
+    pFile = fopen(fileName, "rb" );
+    if (pFile == NULL) {
+        return NULL;
+    }
+    
+    // obtain file size:
+    fseek(pFile , 0 , SEEK_END);
+    lSize = ftell(pFile);
+    rewind(pFile);
+    
+    // allocate memory to contain the whole file:
+    encryptedData = (char*) malloc(sizeof(char) * lSize);
+    if (encryptedData == NULL) {
+        return NULL;
+    }
+    
+    // copy the file into the buffer:
+    result = fread(encryptedData, 1, lSize, pFile);
+    if (result != lSize) {
+        return NULL;
+    }
+    
+    fclose (pFile);
+    
+    char *originalBytes = aes256CryptedDataFromData(encryptedData, lSize, symKey, symKeyLength, outputLength);
+    
+    free (encryptedData);
+    
+    return originalBytes;
+    
+}

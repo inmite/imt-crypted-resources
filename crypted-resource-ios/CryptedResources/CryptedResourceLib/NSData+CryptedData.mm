@@ -16,6 +16,8 @@
 
 @implementation NSData (CryptedData)
 
+#pragma mark - XOR encryption support
+
 /**
  * Returns data obtained after decrypting crypted data using the client provided raw key.
  * @param encryptedData A chunk of crypted data to be decrypted.
@@ -133,5 +135,126 @@
     return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
 }
 
+#pragma mark - AES256 encryption support
+
+/**
+ * Return an original data by AES256 decrypting the encrypted data with a privided raw key.
+ * @param encryptedData The encrypted data to be decrypted using AES256 algorithm with given raw binary key to obtain the original data.
+ * @param rawKey A raw key to be used for AES256 encryption.
+ * @return Original data.
+ */
++ (NSData *)dataWithAes256CryptedData:(NSData *)encryptedData rawKey:(NSData *)rawKey {
+    size_t size;
+    char *cryptedBytes = CryptedDataUtil::aes256DataFromCryptedData((char*)[encryptedData bytes], encryptedData.length, (char*)[rawKey bytes], rawKey.length, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Return an original data by AES256 decrypting the encrypted data with a privided hex key.
+ * @param encryptedData The encrypted data to be decrypted using AES256 algorithm with given hex key to obtain the original data.
+ * @param rawKey A hex key to be used for AES256 encryption.
+ * @return Original data.
+ */
++ (NSData *)dataWithAes256CryptedData:(NSData *)encryptedData hexKey:(NSString *)hexKey {
+    size_t size;
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *cryptedBytes = CryptedDataUtil::aes256DataFromCryptedData((char*)[encryptedData bytes], encryptedData.length, rawKey, [hexKey length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Return an original data by AES256 decrypting the encrypted data with the default key.
+ * @param encryptedData The encrypted data to be decrypted using AES256 algorithm with the default key to obtain the original data.
+ * @return Original data.
+ */
++ (NSData *)dataWithAes256CryptedData:(NSData *)encryptedData {
+    size_t size;
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[DEFAULT_KEY cStringUsingEncoding:NSASCIIStringEncoding], [DEFAULT_KEY length]);
+    char *cryptedBytes = CryptedDataUtil::aes256DataFromCryptedData((char*)[encryptedData bytes], encryptedData.length, rawKey, [DEFAULT_KEY length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Return an encrypted data by AES256 crypting the original data with a privided raw key.
+ * @param originalData The original data to be encrypted using AES256 algorithm with given raw binary key.
+ * @param rawKey A raw key to be used for AES256 encryption.
+ * @return AES256 encrypted data using a given raw key.
+ */
++ (NSData *)aes256cryptedDataWithData:(NSData *)originalData rawKey:(NSData *)rawKey {
+    size_t size;
+    char *cryptedBytes = CryptedDataUtil::aes256CryptedDataFromData((char*)[originalData bytes], originalData.length, (char*)[rawKey bytes], rawKey.length, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];    
+}
+
+/**
+ * Return an encrypted data by AES256 crypting the original data with a privided hex key.
+ * @param originalData The original data to be encrypted using AES256 algorithm with given hex key.
+ * @param hexKey A hex key to be used for AES256 encryption.
+ * @return AES256 encrypted data using a given hex key.
+ */
++ (NSData *)aes256cryptedDataWithData:(NSData *)originalData hexKey:(NSString *)hexKey {
+    size_t size;
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *cryptedBytes = CryptedDataUtil::aes256CryptedDataFromData((char*)[originalData bytes], originalData.length, rawKey, [hexKey length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Return an encrypted data by AES256 crypting the original data with the default key.
+ * @param originalData The original data to be encrypted using AES256 algorithm with the default key.
+ * @return AES256 encrypted data using the default key.
+ */
++ (NSData *)aes256cryptedDataWithData:(NSData *)originalData {
+    size_t size;
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[DEFAULT_KEY cStringUsingEncoding:NSASCIIStringEncoding], [DEFAULT_KEY length]);
+    char *cryptedBytes = CryptedDataUtil::aes256CryptedDataFromData((char*)[originalData bytes], originalData.length, rawKey, [DEFAULT_KEY length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:cryptedBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Returns data obtained after decrypting crypted data stored in a specified file using
+ * AES256 algorithm with the client provided raw key.
+ * @param fullPath A full path to the binary file with the AES256 crypted data.
+ * @param rawKey A key used to decrypt the crypted data, raw bytes.
+ * @return An instance of NSData obrained by decrypting the crypted data using AES256. The decrypted data
+ * does not have to be valid when using the incorrect key.
+ */
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath rawKey:(NSData*)rawKey {
+    size_t size;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+        return nil;
+    }
+    char *originalBytes = CryptedDataUtil::aes256DataFromCryptedFile([fullPath UTF8String], (char*)[rawKey bytes], [rawKey length], &size);
+    return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Returns data obtained after decrypting crypted data stored in a specified file using
+ * AES256 algorithm with the client provided hex key.
+ * @param fullPath A full path to the binary file with the AES256 crypted data.
+ * @param hex A key used to decrypt the crypted data, raw bytes.
+ * @return An instance of NSData obrained by decrypting the crypted data using AES256. The decrypted data
+ * does not have to be valid when using the incorrect key.
+ */
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath hexKey:(NSString*)hexKey {
+    size_t size;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+        return nil;
+    }
+    char *rawKey = CryptedDataUtil::hex2bytes((char*)[hexKey cStringUsingEncoding:NSASCIIStringEncoding], [hexKey length]);
+    char *originalBytes = CryptedDataUtil::aes256DataFromCryptedFile([fullPath UTF8String], (char*)rawKey, [hexKey length] / 2, &size);
+    return [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
+}
+
+/**
+ * Returns data obtained after decrypting crypted data stored in a specified file using
+ * AES256 algorithm with the default key.
+ * @param fullPath A full path to the binary file with the AES256 crypted data.
+ * @return An instance of NSData obrained by decrypting the crypted data using AES256. The decrypted data
+ * does not have to be valid when using the incorrect key.
+ */
++ (NSData*) dataWithContentsOfAes256CryptedFile:(NSString *)fullPath {
+    return [NSData dataWithContentsOfAes256CryptedFile:fullPath hexKey:DEFAULT_KEY];
+}
 
 @end

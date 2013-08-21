@@ -27,6 +27,12 @@
     self.imageView.image = [UIImage cryptedImageNamed:@"inmite.cri"];
     self.label.text = [NSString stringWithContentsOfCryptedFile:[[NSBundle mainBundle] pathForResource:@"text" ofType:@"crs"]
                                                        encoding:NSUTF8StringEncoding];
+
+// AES256 Example Code
+//    NSData *originalData = UIImagePNGRepresentation(self.imageView.image);
+//    NSData *encryptedData = [NSData aes256cryptedDataWithData:originalData hexKey:DEFAULT_KEY];
+//    originalData = [NSData dataWithAes256CryptedData:encryptedData hexKey:DEFAULT_KEY];
+//    self.imageView.image = [UIImage imageWithData:originalData];
 }
 
 - (void)didReceiveMemoryWarning
