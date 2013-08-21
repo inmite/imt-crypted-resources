@@ -26,7 +26,7 @@
  * if the decryption was not successful.
  */
 + (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
-    NSData *data = [NSData cryptedDataWithData:encryptedData rawKey:rawKey];
+    NSData *data = [NSData dataWithCryptedData:encryptedData rawKey:rawKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
 
@@ -40,7 +40,7 @@
  * if the decryption was not successful or file does not exist.
  */
 + (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
-    NSData *data = [NSData cryptedDataWithContentsOfFile:fullPath rawKey:rawKey];
+    NSData *data = [NSData dataWithContentsOfCryptedFile:fullPath rawKey:rawKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
 
@@ -54,7 +54,7 @@
  * if the decryption was not successful.
  */
 + (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
-    NSData *data = [NSData cryptedDataWithData:encryptedData hexKey:hexKey];
+    NSData *data = [NSData dataWithCryptedData:encryptedData hexKey:hexKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
 
@@ -68,7 +68,7 @@
  * if the decryption was not successful or file does not exist.
  */
 + (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
-    NSData *data = [NSData cryptedDataWithContentsOfFile:fullPath hexKey:hexKey];
+    NSData *data = [NSData dataWithContentsOfCryptedFile:fullPath hexKey:hexKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
 

@@ -22,8 +22,8 @@
 + (NSData*) dataWithCryptedData:(NSData*)encryptedData hexKey:(NSString*)hexKey;
 + (NSData*) dataWithCryptedData:(NSData*)encryptedData;
 
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
-+ (NSData*) cryptedDataWithContentsOfFile:(NSString *)fullPath;
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath rawKey:(NSData*)rawKey;
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath hexKey:(NSString*)hexKey;
++ (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath;
 
 @end

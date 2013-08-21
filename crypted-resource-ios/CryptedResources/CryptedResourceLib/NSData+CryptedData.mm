@@ -96,7 +96,7 @@
  * does not have to be valid when using the incorrect default key.
  */
 + (NSData*) dataWithContentsOfCryptedFile:(NSString *)fullPath {
-    return [NSData cryptedDataWithContentsOfFile:fullPath hexKey:DEFAULT_KEY];
+    return [NSData dataWithContentsOfCryptedFile:fullPath hexKey:DEFAULT_KEY];
 }
 
 /**
