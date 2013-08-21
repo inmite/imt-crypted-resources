@@ -38,7 +38,7 @@ From this moment on, you are able to call the specific methods on <code>UIImage<
     // ...
     
     self.image = [UIImage cryptedImageNamed:@"output.cri"];
-    self.text  = [NSString cryptedStringWithContentsOfFile:@"crypted_text.crs"
+    self.text  = [NSString stringWithContentsOfCryptedFile:@"crypted_text.crs"
                                                   encoding:NSUTF8StringEncoding];
     self.data  = [NSData cryptedDataWithData:originalData];
     
@@ -49,7 +49,8 @@ raw NSData object) for each of the resources, for example as such:
 
 This may come handy in case you need to obfuscate the key itself in the binary.
 
-See the header files for more detailed information on what methods are available.
+See the header files for more detailed information on what methods are available, detailed 
+comments are in the implementation files.
 
 Licence
 -------
