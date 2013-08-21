@@ -1,15 +1,15 @@
 Mobile library and tool for encrypted resources
 ===============================================
 
-This is a project for utility library and tools for resource encryption on iOS. It
-basically obfuscates resources using a XOR function with a key provided in the binary,
+This is a project for utility library and tools for resource and data encryption on iOS. It
+basically obfuscates resources using a XOR or AES256 function with a key provided in the binary,
 drawing resources unreadable for a regular users or modarate attackers.
 
 How to use 
 ----------
 
 The project contains a simple tool written in Java that can be used to encrypt or decrypt
-files, as such:
+files using XOR algorithm, as such:
 
     $ java -jar crypted-resource-java-tool.jar gen 16
     ffa17e84f481201844724a4e1c1b981e
@@ -49,8 +49,7 @@ raw NSData object) for each of the resources, for example as such:
 
 This may come handy in case you need to obfuscate the key itself in the binary.
 
-See the header files for more detailed information on what methods are available, detailed 
-comments are in the implementation files.
+See the header files for more detailed information on what methods are available.
 
 Licence
 -------
