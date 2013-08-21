@@ -17,6 +17,13 @@
 @implementation UIImage (CryptedImage)
 
 /**
+ * Alias for cryptedImageWithData:rawKey:
+ */
++ (UIImage*) imageWithCryptedData:(NSData*)encryptedData rawKey:(NSData*)rawKey {
+    return [self cryptedImageWithData:encryptedData rawKey:rawKey];
+}
+
+/**
  * Returns a UIImage from the crypted chunk of data. This method uses client provided raw key
  * to decrypt the data.
  * @param encryptedData A chunk of crypted data that includes a crypted image.
@@ -94,6 +101,13 @@
 }
 
 /**
+ * Alias for cryptedImageWithData:hexKey:
+ */
++ (UIImage *)imageWithCryptedData:(NSData *)encryptedData hexKey:(NSString *)hexKey {
+    return [self cryptedImageWithData:encryptedData hexKey:hexKey];
+}
+
+/**
  * Returns a UIImage from the crypted chunk of data. This method uses client provided key
  * to decrypt the data.
  * @param encryptedData A chunk of crypted data that includes a crypted image.
@@ -107,6 +121,13 @@
     NSData *data = [NSData dataWithBytesNoCopy:originalBytes length:size freeWhenDone:YES];
     image = [UIImage imageWithData:data];
     return image;
+}
+
+/**
+ * Alias for cryptedImageWithData:
+ */
++ (UIImage *)imageWithCryptedData:(NSData *)encryptedData {
+    return [self cryptedImageWithData:encryptedData];
 }
 
 /**

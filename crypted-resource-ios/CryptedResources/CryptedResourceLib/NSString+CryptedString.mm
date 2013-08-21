@@ -25,7 +25,7 @@
  * @return An instance of NSString with decrypted data from the original bytes in NSData instance, or null
  * if the decryption was not successful.
  */
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
     NSData *data = [NSData dataWithCryptedData:encryptedData rawKey:rawKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
@@ -39,7 +39,7 @@
  * @return An instance of NSString with decrypted data from the file, or null
  * if the decryption was not successful or file does not exist.
  */
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey {
     NSData *data = [NSData dataWithContentsOfCryptedFile:fullPath rawKey:rawKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
@@ -53,7 +53,7 @@
  * @return An instance of NSString with decrypted data from the original bytes in NSData instance, or null
  * if the decryption was not successful.
  */
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
     NSData *data = [NSData dataWithCryptedData:encryptedData hexKey:hexKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
@@ -67,7 +67,7 @@
  * @return An instance of NSString with decrypted data from the file, or null
  * if the decryption was not successful or file does not exist.
  */
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString *)hexKey {
     NSData *data = [NSData dataWithContentsOfCryptedFile:fullPath hexKey:hexKey];
     return [[NSString alloc] initWithData:data encoding:encoding];
 }
@@ -80,8 +80,8 @@
  * @return An instance of NSString with decrypted data from the original bytes in NSData instance, or null
  * if the decryption was not successful.
  */
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding {
-    return [NSString cryptedStringWithData:encryptedData encoding:encoding hexKey:DEFAULT_KEY];
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding {
+    return [NSString stringWithCryptedData:encryptedData encoding:encoding hexKey:DEFAULT_KEY];
 }
 
 /**
@@ -92,8 +92,8 @@
  * @return An instance of NSString with decrypted data from the file, or null
  * if the decryption was not successful or file does not exist.
  */
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding {
-    return [NSString cryptedStringWithContentsOfFile:fullPath encoding:encoding hexKey:DEFAULT_KEY];
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding {
+    return [NSString stringWithContentsOfCryptedFile:fullPath encoding:encoding hexKey:DEFAULT_KEY];
 }
 
 @end

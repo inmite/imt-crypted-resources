@@ -14,13 +14,13 @@
 
 @interface NSString (CryptedString)
 
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding rawKey:(NSData*)rawKey;
 
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding hexKey:(NSString*)hexKey;
 
-+ (NSString*) cryptedStringWithData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding;
-+ (NSString*) cryptedStringWithContentsOfFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding;
++ (NSString*) stringWithCryptedData:(NSData*)encryptedData encoding:(NSStringEncoding)encoding;
++ (NSString*) stringWithContentsOfCryptedFile:(NSString *)fullPath encoding:(NSStringEncoding)encoding;
 
 @end
