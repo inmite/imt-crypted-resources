@@ -1,0 +1,277 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		275530FD1B3365E600249210 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275530FC1B3365E600249210 /* main.m */; };
+		2755310E1B33718A00249210 /* CryptedDataUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 275531051B33718A00249210 /* CryptedDataUtil.cpp */; };
+		2755310F1B33718A00249210 /* NSData+CryptedData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 275531091B33718A00249210 /* NSData+CryptedData.mm */; };
+		275531101B33718A00249210 /* NSString+CryptedString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2755310B1B33718A00249210 /* NSString+CryptedString.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		275530F71B3365E600249210 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		275530F91B3365E600249210 /* pngcrypt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pngcrypt; sourceTree = BUILT_PRODUCTS_DIR; };
+		275530FC1B3365E600249210 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		275531041B33718A00249210 /* CryptedConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptedConstants.h; sourceTree = "<group>"; };
+		275531051B33718A00249210 /* CryptedDataUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CryptedDataUtil.cpp; sourceTree = "<group>"; };
+		275531061B33718A00249210 /* CryptedDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptedDataUtil.h; sourceTree = "<group>"; };
+		275531071B33718A00249210 /* CryptedResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptedResources.h; sourceTree = "<group>"; };
+		275531081B33718A00249210 /* NSData+CryptedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CryptedData.h"; sourceTree = "<group>"; };
+		275531091B33718A00249210 /* NSData+CryptedData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+CryptedData.mm"; sourceTree = "<group>"; };
+		2755310A1B33718A00249210 /* NSString+CryptedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CryptedString.h"; sourceTree = "<group>"; };
+		2755310B1B33718A00249210 /* NSString+CryptedString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+CryptedString.mm"; sourceTree = "<group>"; };
+		2755310C1B33718A00249210 /* UIImage+CryptedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CryptedImage.h"; sourceTree = "<group>"; };
+		2755310D1B33718A00249210 /* UIImage+CryptedImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+CryptedImage.mm"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		275530F61B3365E600249210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		275530F01B3365E600249210 = {
+			isa = PBXGroup;
+			children = (
+				275530FB1B3365E600249210 /* pngcrypt */,
+				275530FA1B3365E600249210 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		275530FA1B3365E600249210 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				275530F91B3365E600249210 /* pngcrypt */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		275530FB1B3365E600249210 /* pngcrypt */ = {
+			isa = PBXGroup;
+			children = (
+				275531031B33718A00249210 /* CryptedResourceLib */,
+				275530FC1B3365E600249210 /* main.m */,
+			);
+			path = pngcrypt;
+			sourceTree = "<group>";
+		};
+		275531031B33718A00249210 /* CryptedResourceLib */ = {
+			isa = PBXGroup;
+			children = (
+				275531041B33718A00249210 /* CryptedConstants.h */,
+				275531051B33718A00249210 /* CryptedDataUtil.cpp */,
+				275531061B33718A00249210 /* CryptedDataUtil.h */,
+				275531071B33718A00249210 /* CryptedResources.h */,
+				275531081B33718A00249210 /* NSData+CryptedData.h */,
+				275531091B33718A00249210 /* NSData+CryptedData.mm */,
+				2755310A1B33718A00249210 /* NSString+CryptedString.h */,
+				2755310B1B33718A00249210 /* NSString+CryptedString.mm */,
+				2755310C1B33718A00249210 /* UIImage+CryptedImage.h */,
+				2755310D1B33718A00249210 /* UIImage+CryptedImage.mm */,
+			);
+			name = CryptedResourceLib;
+			path = "../../../../GitHub/imt-crypted-resources/crypted-resource-ios/CryptedResources/CryptedResourceLib";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		275530F81B3365E600249210 /* pngcrypt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275531001B3365E600249210 /* Build configuration list for PBXNativeTarget "pngcrypt" */;
+			buildPhases = (
+				275530F51B3365E600249210 /* Sources */,
+				275530F61B3365E600249210 /* Frameworks */,
+				275530F71B3365E600249210 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pngcrypt;
+			productName = pngcrypt;
+			productReference = 275530F91B3365E600249210 /* pngcrypt */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		275530F11B3365E600249210 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Nikolay Kapustin";
+				TargetAttributes = {
+					275530F81B3365E600249210 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 275530F41B3365E600249210 /* Build configuration list for PBXProject "pngcrypt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 275530F01B3365E600249210;
+			productRefGroup = 275530FA1B3365E600249210 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				275530F81B3365E600249210 /* pngcrypt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		275530F51B3365E600249210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2755310F1B33718A00249210 /* NSData+CryptedData.mm in Sources */,
+				275530FD1B3365E600249210 /* main.m in Sources */,
+				275531101B33718A00249210 /* NSString+CryptedString.mm in Sources */,
+				2755310E1B33718A00249210 /* CryptedDataUtil.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		275530FE1B3365E600249210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		275530FF1B3365E600249210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		275531011B3365E600249210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		275531021B3365E600249210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		275530F41B3365E600249210 /* Build configuration list for PBXProject "pngcrypt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275530FE1B3365E600249210 /* Debug */,
+				275530FF1B3365E600249210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		275531001B3365E600249210 /* Build configuration list for PBXNativeTarget "pngcrypt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275531011B3365E600249210 /* Debug */,
+				275531021B3365E600249210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 275530F11B3365E600249210 /* Project object */;
+}

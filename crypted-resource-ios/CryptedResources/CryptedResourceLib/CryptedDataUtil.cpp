@@ -180,7 +180,7 @@ char* CryptedDataUtil::aes256DataFromCryptedFile(const char* fileName, char *sym
     
     fclose (pFile);
     
-    char *originalBytes = aes256CryptedDataFromData(encryptedData, lSize, symKey, symKeyLength, outputLength);
+    char *originalBytes = aes256DataFromCryptedData(encryptedData, lSize, symKey, symKeyLength, outputLength);
     
     free (encryptedData);
     
